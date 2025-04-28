@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DBMS Programming Quiz - Hard Level</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 10px;
+    }
+    .options input {
+      margin-right: 10px;
+    }
+    .submit-btn, .back-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #2575fc;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover, .back-btn:hover {
+      background-color: #0056d2;
+    }
+    .score {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>DBMS Programming Quiz</h1>
+    <h2>Hard Level</h2>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What is the purpose of "Third Normal Form" (3NF) in DBMS?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q1" value="0"> To eliminate partial dependency of attributes on the primary key</label></li>
+          <li><label><input type="radio" name="q1" value="1"> To ensure that no non-prime attribute depends on another non-prime attribute</label></li>
+          <li><label><input type="radio" name="q1" value="0"> To remove duplicate data from a database</label></li>
+          <li><label><input type="radio" name="q1" value="0"> To reduce redundancy by removing duplicate data</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>2. What is "sharding" in the context of DBMS?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q2" value="1"> Partitioning a database into smaller, more manageable pieces called "shards"</label></li>
+          <li><label><input type="radio" name="q2" value="0"> Splitting a database into multiple tables to reduce complexity</label></li>
+          <li><label><input type="radio" name="q2" value="0"> Merging multiple databases into a single unified structure</label></li>
+          <li><label><input type="radio" name="q2" value="0"> Encrypting a database to secure it against unauthorized access</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>3. What is the main purpose of "referential integrity" in DBMS?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q3" value="1"> It ensures that relationships between tables remain consistent and valid</label></li>
+          <li><label><input type="radio" name="q3" value="0"> It ensures that only numeric values can be inserted into a field</label></li>
+          <li><label><input type="radio" name="q3" value="0"> It ensures that there are no duplicate records in the database</label></li>
+          <li><label><input type="radio" name="q3" value="0"> It ensures that data is encrypted for security purposes</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>4. What is the purpose of the "ACID" properties in DBMS?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q4" value="1"> To ensure that database transactions are processed reliably</label></li>
+          <li><label><input type="radio" name="q4" value="0"> To enable fast access to large datasets</label></li>
+          <li><label><input type="radio" name="q4" value="0"> To improve the scalability of the database</label></li>
+          <li><label><input type="radio" name="q4" value="0"> To ensure that data is backed up automatically</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>5. Which of the following SQL operations can be used to retrieve data from multiple tables?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q5" value="1"> JOIN</label></li>
+          <li><label><input type="radio" name="q5" value="0"> UNION</label></li>
+          <li><label><input type="radio" name="q5" value="0"> GROUP BY</label></li>
+          <li><label><input type="radio" name="q5" value="0"> SELECT INTO</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>6. Which of the following is a disadvantage of denormalization?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q6" value="1"> It may lead to data redundancy and anomalies</label></li>
+          <li><label><input type="radio" name="q6" value="0"> It makes the database more normalized</label></li>
+          <li><label><input type="radio" name="q6" value="0"> It reduces storage requirements</label></li>
+          <li><label><input type="radio" name="q6" value="0"> It improves query performance</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>7. In DBMS, what does "transaction isolation" ensure?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q7" value="1"> It ensures that the effects of one transaction are not visible to other transactions until committed</label></li>
+          <li><label><input type="radio" name="q7" value="0"> It ensures that all transactions are executed sequentially</label></li>
+          <li><label><input type="radio" name="q7" value="0"> It ensures that no changes are made to the database until the transaction is completed</label></li>
+          <li><label><input type="radio" name="q7" value="0"> It ensures that transactions are always atomic</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>8. Which of the following is an example of a "recursive" relationship in a database?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q8" value="1"> An employee reports to another employee</label></li>
+          <li><label><input type="radio" name="q8" value="0"> A student enrolls in multiple courses</label></li>
+          <li><label><input type="radio" name="q8" value="0"> A professor teaches multiple students</label></li>
+          <li><label><input type="radio" name="q8" value="0"> A customer makes multiple purchases</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>9. Which of the following DBMS normalization forms is used to eliminate transitive dependencies?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q9" value="1"> Third Normal Form (3NF)</label></li>
+          <li><label><input type="radio" name="q9" value="0"> First Normal Form (1NF)</label></li>
+          <li><label><input type="radio" name="q9" value="0"> Second Normal Form (2NF)</label></li>
+          <li><label><input type="radio" name="q9" value="0"> Boyce-Codd Normal Form (BCNF)</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>10. What does "deadlock" refer to in a DBMS?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q10" value="1"> A situation where two or more transactions are stuck, waiting for each other to release resources</label></li>
+          <li><label><input type="radio" name="q10" value="0"> A condition where no transaction can be executed due to a lack of resources</label></li>
+          <li><label><input type="radio" name="q10" value="0"> A failure of the DBMS to perform a commit operation</label></li>
+          <li><label><input type="radio" name="q10" value="0"> A process in which a database is locked for maintenance</label></li>
+        </ul>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div class="score" id="scoreContainer"></div>
+    <div id="back-button">
+        <a href="menu.html">Back</a>
+      </div>
+  </div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      for (let i = 1; i <= 10; i++) {
+        const options = document.getElementsByName('q' + i);
+        for (const option of options) {
+          if (option.checked && parseInt(option.value) === 1) {
+            score++;
+          }
+        }
+      }
+      document.getElementById('scoreContainer').textContent = 'Your Score: ' + score + ' / 10';
+    });
+
+    function goBack() {
+      history.back();
+    }
+  </script>
+</body>
+</html>

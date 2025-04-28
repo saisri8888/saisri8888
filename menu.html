@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Quiz</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .header {
+      background-color: #2575fc;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      transition: margin-left 0.3s;
+    }
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 1;
+    }
+    .sidebar a {
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #ccc;
+      display: flex;
+      align-items: center;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .sidebar a:hover {
+      background-color: #575757;
+      color: white;
+    }
+    .sidebar i {
+      margin-right: 10px;
+    }
+    .main {
+      margin-left: 0;
+      padding: 20px;
+      transition: margin-left 0.3s;
+    }
+    .level-buttons {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .level-buttons button {
+      width: 300px;
+      padding: 20px;
+      font-size: 20px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      color: white;
+      background-color: #2575fc;
+      transition: background-color 0.3s;
+    }
+    .level-buttons button:hover {
+      background-color: #0056d2;
+    }
+    @media screen and (min-width: 600px) {
+      .sidebar {
+        width: 200px;
+      }
+      .main {
+        margin-left: 200px;
+      }
+      .header {
+        margin-left: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div id="mySidebar" class="sidebar">
+  <a href="#"><i class="fa fa-home"></i> Dashboard</a>
+  <a href="#" onclick="loadLevels('C')"><i class="fa-solid fa-c"></i> C</a>
+  <a href="#" onclick="loadLevels('C++')"><i class="fa-solid fa-code"></i> C++</a>
+  <a href="#" onclick="loadLevels('Java')"><i class="fa-solid fa-mug-hot"></i> Java</a>
+  <a href="#" onclick="loadLevels('Python')"><i class="fa-brands fa-python"></i> Python</a>
+  <a href="#" onclick="loadLevels('DBMS')"><i class="fa-solid fa-database"></i> DBMS</a>
+  <a href="#"><i class="fa-solid fa-trophy"></i> Leaderboard</a>
+</div>
+
+<!-- Header -->
+<div class="header">
+  <span class="menu-icon" onclick="toggleSidebar()"><i class="fa fa-bars"></i></span>
+  <h1>Online Quiz</h1>
+</div>
+
+<!-- Main Content -->
+<div class="main" id="mainContent">
+  <h2>Welcome to the Quiz Platform</h2>
+  <p>Select an option from the menu to get started.</p>
+</div>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById("mySidebar");
+    if (sidebar.style.width === "200px") {
+      sidebar.style.width = "0";
+      document.querySelector(".main").style.marginLeft = "0";
+      document.querySelector(".header").style.marginLeft = "0";
+    } else {
+      sidebar.style.width = "200px";
+      document.querySelector(".main").style.marginLeft = "200px";
+      document.querySelector(".header").style.marginLeft = "200px";
+    }
+  }
+
+  function loadLevels(subject) {
+    const main = document.getElementById("mainContent");
+    main.innerHTML = `
+      <h2>${subject} Quiz Levels</h2>
+      <div class="level-buttons">
+        <button onclick="startQuiz('${subject}', 'Easy')">Easy Level</button>
+        <button onclick="startQuiz('${subject}', 'Medium')">Medium Level</button>
+        <button onclick="startQuiz('${subject}', 'Hard')">Hard Level</button>
+      </div>
+    `;
+  }
+
+  function startQuiz(subject, level) {
+    let filename = "";
+
+    if (subject === "C") {
+      if (level === "Easy") filename = "cprogram.html";
+      else if (level === "Medium") filename = "cmedium.html";
+      else if (level === "Hard") filename = "chard.html";
+    }
+    else if (subject === "C++") {
+      if (level === "Easy") filename = "c++easy.html";
+      else if (level === "Medium") filename = "c++medium.html";
+      else if (level === "Hard") filename = "c++hard.html";
+    }
+    else if (subject === "Java") {
+      if (level === "Easy") filename = "javaeasy.html";
+      else if (level === "Medium") filename = "javamedium.html";
+      else if (level === "Hard") filename = "javahard.html";
+    }
+    else if (subject === "Python") {
+      if (level === "Easy") filename = "pythoneasy.html";
+      else if (level === "Medium") filename = "pythonmedium.html";
+      else if (level === "Hard") filename = "pythonhard.html";
+    }
+    else if (subject === "DBMS") {
+      if (level === "Easy") filename = "dbmseasy.html";
+      else if (level === "Medium") filename = "dbmsmedium.html";
+      else if (level === "Hard") filename = "dbmshard.html";
+    }
+
+    if (filename !== "") {
+      window.location.href = filename;
+    } else {
+      alert(`Starting ${subject} Quiz at ${level} Level (Page Not Linked Yet)!`);
+    }
+  }
+</script>
+
+</body>
+</html>

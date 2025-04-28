@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C Program Hard Level Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .quiz-container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .question {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 10px;
+    }
+    .options label {
+      cursor: pointer;
+    }
+    .navigation-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .navigation-buttons button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #score-container {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+    #back-button {
+      margin-top: 20px;
+      display: block;
+      text-align: center;
+    }
+    #back-button a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #2575fc;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    #back-button a:hover {
+      background-color: #0056d2;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>C Program Hard Level Quiz</h1>
+    <div id="quiz">
+      <!-- Questions will be injected here by JavaScript -->
+    </div>
+    <div class="navigation-buttons">
+      <button id="prev">Previous</button>
+      <button id="next">Next</button>
+    </div>
+    <div id="score-container">
+      <h2>Your Score: <span id="score"></span>/10</h2>
+    </div>
+    <div id="back-button">
+      <a href="menu.html">Back</a>
+    </div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What is the output of the following C code?\n\n#include <stdio.h>\nint main() {\n    int a = 5;\n    printf(\"%d\", a++ + ++a);\n    return 0;\n}",
+        options: ["11", "12", "10", "Undefined Behavior"],
+        answer: 1
+      },
+      {
+        question: "Which of the following statements about pointers is true?",
+        options: [
+          "Pointers can be used to access array elements.",
+          "Pointers cannot be assigned to another pointer.",
+          "Pointers can only point to integer data types.",
+          "Pointers do not occupy memory."
+        ],
+        answer: 0
+      },
+      {
+        question: "What is the output of the following code?\n\n#include <stdio.h>\nint main() {\n    int x = 10;\n    if (x == 10)\n        if (x == 20)\n            printf(\"x is 20\");\n    else\n        printf(\"x is not 20\");\n    return 0;\n}",
+        options: ["x is 20", "x is not 20", "No output", "Compile-time error"],
+        answer: 2
+      },
+      {
+        question: "Which of the following is not a storage class specifier in C?",
+        options: ["auto", "register", "static", "mutable"],
+        answer: 3
+      },
+      {
+        question: "What is the size of the following structure?\n\nstruct test {\n    int x;\n    char y;\n    float z;\n};",
+        options: ["9 bytes", "12 bytes", "8 bytes", "10 bytes"],
+        answer: 1
+      },
+      {
+        question: "Which of the following is the correct way to declare a function pointer?",
+        options: [
+          "int *func();",
+          "int (*func)();",
+          "int func*();",
+          "int func();"
+        ],
+        answer: 1
+      },
+      {
+        question: "What is the output of the following code?\n\n#include <stdio.h>\n#define square(x) x*x\nint main() {\n    int a = 3;\n    int result = square(a + 1);\n    printf(\"%d\", result);\n    return 0;\n}",
+        options: ["16", "13", "7", "Error"],
+        answer: 1
+      },
+      {
+        question: "Which of the following is not a valid C identifier?",
+        options: ["_var", "var1", "1var", "var_1"],
+        answer: 2
+      },
+      {
+        question: "What is the output of the following code?\n\n#include <stdio.h>\nint main() {\n    char *ptr = \"Hello\";\n    printf(\"%c\", *&*&ptr);\n    return 0;\n}",
+        options: ["H", "e", "l", "Compile-time error"],
+        answer: 0
+      },
+      {
+        question: "Which of the following functions is used to dynamically allocate memory in C?",
+        options: ["malloc()", "alloc()", "memory_alloc()", "calloc()"],
+        answer: 0
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    const quizContainer = document.getElementById('quiz');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    const scoreContainer = document.getElementById('score-container');
+    const scoreDisplay = document.getElementById('score');
+
+    function loadQuestion(index) {
+      const qData = quizData[index];
+      quizContainer.innerHTML = `
+        <div class="question"><strong>Question ${index + 1}:</strong><br>${qData.question.replace(/\n/g, '<br>')}</div>
+        <ul class="options">
+          ${qData.options.map((option, i) => `
+            <li>
+              <label>
+                <input type="radio" name="option" value="${i}" ${userAnswers[index] === i ? 'checked' : ''}>
+                ${option}
+              </label>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+      prevButton.disabled = index === 0;
+      nextButton.textContent = index === quizData.length - 1 ? 'Submit' : 'Next';
+    }
+
+    function showScore() {
+      score = userAnswers.reduce((acc, answer, index) => {
+        return acc + (answer === quizData[index].answer ? 1 : 0);
+      }, 0);
+      quizContainer.style.display = 'none';
+      prevButton.style.display = 'none';
+      nextButton.style.display = 'none';
+      scoreContainer.style.display = 'block';
+      scoreDisplay.textContent = score;
+    }
+
+    quizContainer.addEventListener('change', (e) => {
+      if (e.target.name === 'option') {
+        userAnswers[currentQuestion] = parseInt(e.target.value);
+      }
+    });
+
+    prevButton.addEventListener('click', () => {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion(currentQuestion);
+      }
+    });
+
+    nextButton.addEventListener('click', () => {
+      if (currentQuestion < quizData.length - 1) {
+        currentQuestion++;
+        loadQuestion(currentQuestion);
+      } else {
+        if (userAnswers.includes(null)) {
+          alert('Please answer all questions before submitting.');
+        } else {
+          showScore();
+        }
+      }
+    });
+
+    // Initialize the quiz
+    loadQuestion(currentQuestion);
+  </script>
+</body>
+</html>

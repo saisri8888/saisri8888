@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Quiz - Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 10px;
+      font-size: 1rem;
+      color: white;
+      background-color: #ff4b2b;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #ff416c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Let's Start Quiz!</h1>
+    <p>Test Your Skills and Challenge Yourself</p>
+    <button class="btn" onclick="signIn()">Sign Up</button>
+  </div>
+
+  <script>
+    function signIn() {
+      const email = prompt("Enter your email:");
+      const password = prompt("Enter your password:");
+      if (email && password) {
+        // Here you can add authentication logic
+        // For demonstration, we'll redirect to dashboard.html
+        window.location.href = "menu.html";
+      } else {
+        alert("Please enter both email and password.");
+      }
+    }
+  </script>
+</body>
+</html>

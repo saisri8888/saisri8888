@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Java Programming Quiz - Medium Level</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 10px;
+    }
+    .options input {
+      margin-right: 10px;
+    }
+    .submit-btn, .back-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #2575fc;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover, .back-btn:hover {
+      background-color: #0056d2;
+    }
+    .score {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Java Programming Quiz</h1>
+    <h2>Medium Level</h2>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Which of the following is not a valid access modifier in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q1" value="0"> public</label></li>
+          <li><label><input type="radio" name="q1" value="0"> private</label></li>
+          <li><label><input type="radio" name="q1" value="0"> protected</label></li>
+          <li><label><input type="radio" name="q1" value="1"> global</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>2. What will be the output of the following code?
+          <pre>String s = "Hello";
+           s = s.concat(" World");
+           System.out.println(s);</pre>
+        </p>
+        <ul class="options">
+          <li><label><input type="radio" name="q2" value="1"> Hello World</label></li>
+          <li><label><input type="radio" name="q2" value="0"> Hello</label></li>
+          <li><label><input type="radio" name="q2" value="0"> Error</label></li>
+          <li><label><input type="radio" name="q2" value="0"> World</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>3. In Java, which method is used to compare two strings?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q3" value="0"> compare()</label></li>
+          <li><label><input type="radio" name="q3" value="1"> equals()</label></li>
+          <li><label><input type="radio" name="q3" value="0"> compareTo()</label></li>
+          <li><label><input type="radio" name="q3" value="0"> isEqual()</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>4. Which of the following is true about the 'finally' block in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q4" value="1"> It always executes after the try block, whether or not an exception occurs.</label></li>
+          <li><label><input type="radio" name="q4" value="0"> It only executes if an exception occurs.</label></li>
+          <li><label><input type="radio" name="q4" value="0"> It never executes if an exception occurs.</label></li>
+          <li><label><input type="radio" name="q4" value="0"> It is used to throw exceptions.</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>5. What is the purpose of the 'super' keyword in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q5" value="1"> To refer to the immediate parent class of the current object</label></li>
+          <li><label><input type="radio" name="q5" value="0"> To refer to the parent class of the current object</label></li>
+          <li><label><input type="radio" name="q5" value="0"> To create an object of the parent class</label></li>
+          <li><label><input type="radio" name="q5" value="0"> To initialize the current class constructor</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>6. Which of the following is true about the 'static' keyword in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q6" value="0"> It can only be applied to methods.</label></li>
+          <li><label><input type="radio" name="q6" value="1"> It can be applied to methods, variables, and nested classes.</label></li>
+          <li><label><input type="radio" name="q6" value="0"> It makes the method or variable accessible only within the class it is declared.</label></li>
+          <li><label><input type="radio" name="q6" value="0"> It makes the method or variable invisible outside the class.</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>7. What is the result of dividing an integer by zero in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q7" value="0"> Compilation error</label></li>
+          <li><label><input type="radio" name="q7" value="1"> ArithmeticException runtime error</label></li>
+          <li><label><input type="radio" name="q7" value="0"> Zero is returned</label></li>
+          <li><label><input type="radio" name="q7" value="0"> Infinity is returned</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>8. Which of the following is an example of method overloading in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q8" value="1"> Defining methods with the same name but different parameter types</label></li>
+          <li><label><input type="radio" name="q8" value="0"> Defining methods with the same name and same parameters</label></li>
+          <li><label><input type="radio" name="q8" value="0"> Defining methods with the same name in different classes</label></li>
+          <li><label><input type="radio" name="q8" value="0"> Returning different types from methods with the same name</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>9. Which exception class is thrown when an array index is out of bounds in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q9" value="0"> NullPointerException</label></li>
+          <li><label><input type="radio" name="q9" value="0"> ArithmeticException</label></li>
+          <li><label><input type="radio" name="q9" value="1"> ArrayIndexOutOfBoundsException</label></li>
+          <li><label><input type="radio" name="q9" value="0"> IllegalArgumentException</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>10. What is the return type of the 'main' method in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q10" value="1"> void</label></li>
+          <li><label><input type="radio" name="q10" value="0"> int</label></li>
+          <li><label><input type="radio" name="q10" value="0"> String</label></li>
+          <li><label><input type="radio" name="q10" value="0"> boolean</label></li>
+        </ul>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div class="score" id="scoreContainer"></div>
+    <div id="back-button">
+        <a href="menu.html">Back</a>
+      </div>
+  </div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      for (let i = 1; i <= 10; i++) {
+        const options = document.getElementsByName('q' + i);
+        for (const option of options) {
+          if (option.checked && parseInt(option.value) === 1) {
+            score++;
+          }
+        }
+      }
+      document.getElementById('scoreContainer').textContent = 'Your Score: ' + score + ' / 10';
+    });
+
+    function goBack() {
+      history.back();
+    }
+  </script>
+</body>
+</html>

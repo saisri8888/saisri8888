@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C Program Medium Level Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .quiz-container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .question {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 10px;
+    }
+    .options label {
+      cursor: pointer;
+    }
+    .navigation-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .navigation-buttons button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #score-container {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+    #back-button {
+      margin-top: 20px;
+      display: block;
+      text-align: center;
+    }
+    #back-button a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #2575fc;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    #back-button a:hover {
+      background-color: #0056d2;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>C Program Medium Level Quiz</h1>
+    <div id="quiz">
+      <!-- Questions will be injected here by JavaScript -->
+    </div>
+    <div class="navigation-buttons">
+      <button id="prev">Previous</button>
+      <button id="next">Next</button>
+    </div>
+    <div id="score-container">
+      <h2>Your Score: <span id="score"></span>/10</h2>
+    </div>
+    <div id="back-button">
+      <a href="menu.html">Back</a>
+    </div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What is the output of the following code?\n\nint a = 5;\nprintf(\"%d\", a++);",
+        options: ["5", "6", "Error", "Undefined"],
+        answer: 0
+      },
+      {
+        question: "Which of the following is a correct declaration of a pointer?",
+        options: ["int ptr;", "int *ptr;", "ptr int*;", "int ptr*;"],
+        answer: 1
+      },
+      {
+        question: "What is the size of an int data type in C (on a 32-bit system)?",
+        options: ["2 bytes", "4 bytes", "8 bytes", "Depends on the compiler"],
+        answer: 1
+      },
+      {
+        question: "Which function is used to allocate memory dynamically in C?",
+        options: ["malloc()", "alloc()", "memory_alloc()", "calloc()"],
+        answer: 0
+      },
+      {
+        question: "What is the output of the following code?\n\nprintf(\"%d\", sizeof('A'));",
+        options: ["1", "2", "4", "Depends on the system"],
+        answer: 2
+      },
+      {
+        question: "Which of the following is not a storage class specifier in C?",
+        options: ["auto", "register", "static", "mutable"],
+        answer: 3
+      },
+      {
+        question: "What is the correct way to declare a function that returns a pointer to an int?",
+        options: ["int *func();", "int func*();", "int *func;", "int func();"],
+        answer: 0
+      },
+      {
+        question: "Which operator is used to access the value at the address stored in a pointer?",
+        options: ["&", "*", "->", "."],
+        answer: 1
+      },
+      {
+        question: "What is the output of the following code?\n\nint a = 10;\nint b = 20;\nprintf(\"%d\", a+++b);",
+        options: ["30", "31", "Syntax Error", "Undefined"],
+        answer: 1
+      },
+      {
+        question: "Which of the following is used to prevent multiple inclusions of the same header file?",
+        options: ["#define", "#include", "#ifndef", "#pragma"],
+        answer: 2
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    const quizContainer = document.getElementById('quiz');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    const scoreContainer = document.getElementById('score-container');
+    const scoreDisplay = document.getElementById('score');
+
+    function loadQuestion(index) {
+      const qData = quizData[index];
+      quizContainer.innerHTML = `
+        <div class="question"><strong>Question ${index + 1}:</strong><br>${qData.question.replace(/\n/g, '<br>')}</div>
+        <ul class="options">
+          ${qData.options.map((option, i) => `
+            <li>
+              <label>
+                <input type="radio" name="option" value="${i}" ${userAnswers[index] === i ? 'checked' : ''}>
+                ${option}
+              </label>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+      prevButton.disabled = index === 0;
+      nextButton.textContent = index === quizData.length - 1 ? 'Submit' : 'Next';
+    }
+
+    function showScore() {
+      score = userAnswers.reduce((acc, answer, index) => {
+        return acc + (answer === quizData[index].answer ? 1 : 0);
+      }, 0);
+      quizContainer.style.display = 'none';
+      prevButton.style.display = 'none';
+      nextButton.style.display = 'none';
+      scoreContainer.style.display = 'block';
+      scoreDisplay.textContent = score;
+    }
+
+    quizContainer.addEventListener('change', (e) => {
+      if (e.target.name === 'option') {
+        userAnswers[currentQuestion] = parseInt(e.target.value);
+      }
+    });
+
+    prevButton.addEventListener('click', () => {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion(currentQuestion);
+      }
+    });
+
+    nextButton.addEventListener('click', () => {
+      if (currentQuestion < quizData.length - 1) {
+        currentQuestion++;
+        loadQuestion(currentQuestion);
+      } else {
+        if (userAnswers.includes(null)) {
+          alert('Please answer all questions before submitting.');
+        } else {
+          showScore();
+        }
+      }
+    });
+
+    // Initialize the quiz
+    loadQuestion(currentQuestion);
+  </script>
+</body>
+</html>

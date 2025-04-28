@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python Programming Quiz - Medium Level</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 10px;
+    }
+    .options input {
+      margin-right: 10px;
+    }
+    .submit-btn, .back-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #2575fc;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover, .back-btn:hover {
+      background-color: #0056d2;
+    }
+    .score {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Python Programming Quiz</h1>
+    <h2>Medium Level</h2>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What will be the output of the following code?
+          <pre>print(3 * 'a' + 'b')</pre>
+        </p>
+        <ul class="options">
+          <li><label><input type="radio" name="q1" value="1"> aaab</label></li>
+          <li><label><input type="radio" name="q1" value="0"> abc</label></li>
+          <li><label><input type="radio" name="q1" value="0"> aab</label></li>
+          <li><label><input type="radio" name="q1" value="0"> aabbb</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>2. How can you handle exceptions in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q2" value="0"> try: except: finally:</label></li>
+          <li><label><input type="radio" name="q2" value="1"> try: except: except:</label></li>
+          <li><label><input type="radio" name="q2" value="0"> catch: except: finally:</label></li>
+          <li><label><input type="radio" name="q2" value="0"> try: except:</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>3. What is the correct syntax to create a lambda function in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q3" value="0"> def lambda x: x + 2</label></li>
+          <li><label><input type="radio" name="q3" value="0"> lambda x: return x + 2</label></li>
+          <li><label><input type="radio" name="q3" value="1"> lambda x: x + 2</label></li>
+          <li><label><input type="radio" name="q3" value="0"> lambda: x + 2</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>4. What is the output of the following code?
+          <pre>print([x * 2 for x in range(5)])</pre>
+        </p>
+        <ul class="options">
+          <li><label><input type="radio" name="q4" value="1"> [0, 2, 4, 6, 8]</label></li>
+          <li><label><input type="radio" name="q4" value="0"> [2, 4, 6, 8, 10]</label></li>
+          <li><label><input type="radio" name="q4" value="0"> [0, 1, 2, 3, 4]</label></li>
+          <li><label><input type="radio" name="q4" value="0"> [0, 4, 6, 8, 10]</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>5. Which of the following is the correct way to check if a key exists in a Python dictionary?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q5" value="0"> key in dict</label></li>
+          <li><label><input type="radio" name="q5" value="1"> dict.has_key(key)</label></li>
+          <li><label><input type="radio" name="q5" value="0"> dict.key_exists(key)</label></li>
+          <li><label><input type="radio" name="q5" value="0"> dict.contains_key(key)</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>6. Which of the following will raise a SyntaxError in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q6" value="0"> print("Hello World")</label></li>
+          <li><label><input type="radio" name="q6" value="1"> print("Hello World'</label></li>
+          <li><label><input type="radio" name="q6" value="0"> 2 + 2</label></li>
+          <li><label><input type="radio" name="q6" value="0"> if 5 == 5: pass</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>7. What is the result of the following code?
+          <pre>print(set([1, 1, 2, 3]))</pre>
+        </p>
+        <ul class="options">
+          <li><label><input type="radio" name="q7" value="0"> [1, 2, 3]</label></li>
+          <li><label><input type="radio" name="q7" value="1"> {1, 2, 3}</label></li>
+          <li><label><input type="radio" name="q7" value="0"> [1, 1, 2, 3]</label></li>
+          <li><label><input type="radio" name="q7" value="0"> {1, 1, 2, 3}</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>8. Which method is used to add an item to the end of a list in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q8" value="1"> append()</label></li>
+          <li><label><input type="radio" name="q8" value="0"> insert()</label></li>
+          <li><label><input type="radio" name="q8" value="0"> extend()</label></li>
+          <li><label><input type="radio" name="q8" value="0"> add()</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>9. What will be the output of the following code?
+          <pre>print(1 == True)</pre>
+        </p>
+        <ul class="options">
+          <li><label><input type="radio" name="q9" value="0"> False</label></li>
+          <li><label><input type="radio" name="q9" value="1"> True</label></li>
+          <li><label><input type="radio" name="q9" value="0"> 1</label></li>
+          <li><label><input type="radio" name="q9" value="0"> 0</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>10. What is the correct syntax to merge two dictionaries in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q10" value="0"> dict1.merge(dict2)</label></li>
+          <li><label><input type="radio" name="q10" value="1"> dict1.update(dict2)</label></li>
+          <li><label><input type="radio" name="q10" value="0"> dict1 + dict2</label></li>
+          <li><label><input type="radio" name="q10" value="0"> dict1.extend(dict2)</label></li>
+        </ul>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div class="score" id="scoreContainer"></div>
+    <div id="back-button">
+        <a href="menu.html">Back</a>
+      </div>
+  </div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      for (let i = 1; i <= 10; i++) {
+        const options = document.getElementsByName('q' + i);
+        for (const option of options) {
+          if (option.checked && parseInt(option.value) === 1) {
+            score++;
+          }
+        }
+      }
+      document.getElementById('scoreContainer').textContent = 'Your Score: ' + score + ' / 10';
+    });
+
+    function goBack() {
+      history.back();
+    }
+  </script>
+</body>
+</html>

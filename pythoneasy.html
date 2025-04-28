@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python Programming Quiz - Easy Level</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 10px;
+    }
+    .options input {
+      margin-right: 10px;
+    }
+    .submit-btn, .back-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #2575fc;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover, .back-btn:hover {
+      background-color: #0056d2;
+    }
+    .score {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Python Programming Quiz</h1>
+    <h2>Easy Level</h2>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Which of the following is the correct syntax for defining a function in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q1" value="1"> def function_name():</label></li>
+          <li><label><input type="radio" name="q1" value="0"> function function_name()[]</label></li>
+          <li><label><input type="radio" name="q1" value="0"> function function_name[]:</label></li>
+          <li><label><input type="radio" name="q1" value="0"> function_name(){}:</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>2. What will be the output of the following code?
+          <pre>print(5 + 10 * 2)</pre>
+        </p>
+        <ul class="options">
+          <li><label><input type="radio" name="q2" value="0"> 30</label></li>
+          <li><label><input type="radio" name="q2" value="1"> 25</label></li>
+          <li><label><input type="radio" name="q2" value="0"> 15</label></li>
+          <li><label><input type="radio" name="q2" value="0"> 20</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>3. How do you declare a list in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q3" value="1"> my_list = [1, 2, 3]</label></li>
+          <li><label><input type="radio" name="q3" value="0"> my_list = (1, 2, 3)</label></li>
+          <li><label><input type="radio" name="q3" value="0"> my_list = {1, 2, 3}</label></li>
+          <li><label><input type="radio" name="q3" value="0"> my_list = <1, 2, 3></label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>4. Which of the following data types are immutable in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q4" value="1"> Tuple</label></li>
+          <li><label><input type="radio" name="q4" value="0"> List</label></li>
+          <li><label><input type="radio" name="q4" value="0"> Set</label></li>
+          <li><label><input type="radio" name="q4" value="0"> Dictionary</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>5. How can you check the type of a variable in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q5" value="1"> type(variable)</label></li>
+          <li><label><input type="radio" name="q5" value="0"> check(variable)</label></li>
+          <li><label><input type="radio" name="q5" value="0"> var_type(variable)</label></li>
+          <li><label><input type="radio" name="q5" value="0"> type_of(variable)</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>6. Which method is used to add an element at the end of a list in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q6" value="0"> add()</label></li>
+          <li><label><input type="radio" name="q6" value="1"> append()</label></li>
+          <li><label><input type="radio" name="q6" value="0"> insert()</label></li>
+          <li><label><input type="radio" name="q6" value="0"> extend()</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>7. How do you create a dictionary in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q7" value="0"> dict = (key1: value1, key2: value2)</label></li>
+          <li><label><input type="radio" name="q7" value="1"> dict = {key1: value1, key2: value2}</label></li>
+          <li><label><input type="radio" name="q7" value="0"> dict = [key1: value1, key2: value2]</label></li>
+          <li><label><input type="radio" name="q7" value="0"> dict = <key1: value1, key2: value2></label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>8. What does the 'len()' function do in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q8" value="1"> Returns the length of an object</label></li>
+          <li><label><input type="radio" name="q8" value="0"> Returns the last element of a list</label></li>
+          <li><label><input type="radio" name="q8" value="0"> Returns the index of an element</label></li>
+          <li><label><input type="radio" name="q8" value="0"> Returns the type of an object</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>9. How do you remove an element from a list in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q9" value="0"> delete()</label></li>
+          <li><label><input type="radio" name="q9" value="1"> remove()</label></li>
+          <li><label><input type="radio" name="q9" value="0"> pop()</label></li>
+          <li><label><input type="radio" name="q9" value="0"> discard()</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>10. What is the result of the following expression in Python?
+          <pre>3 * 2 + 4</pre>
+        </p>
+        <ul class="options">
+          <li><label><input type="radio" name="q10" value="0"> 12</label></li>
+          <li><label><input type="radio" name="q10" value="1"> 10</label></li>
+          <li><label><input type="radio" name="q10" value="0"> 8</label></li>
+          <li><label><input type="radio" name="q10" value="0"> 14</label></li>
+        </ul>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div class="score" id="scoreContainer"></div>
+    <div id="back-button">
+        <a href="menu.html">Back</a>
+      </div>
+  </div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      for (let i = 1; i <= 10; i++) {
+        const options = document.getElementsByName('q' + i);
+        for (const option of options) {
+          if (option.checked && parseInt(option.value) === 1) {
+            score++;
+          }
+        }
+      }
+      document.getElementById('scoreContainer').textContent = 'Your Score: ' + score + ' / 10';
+    });
+
+    function goBack() {
+      history.back();
+    }
+  </script>
+</body>
+</html>

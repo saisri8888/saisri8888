@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Java Programming Quiz - Easy Level</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 10px;
+    }
+    .options input {
+      margin-right: 10px;
+    }
+    .submit-btn, .back-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #2575fc;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover, .back-btn:hover {
+      background-color: #0056d2;
+    }
+    .score {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Java Programming Quiz</h1>
+    <h2>Easy Level</h2>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Who invented Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q1" value="0"> Steve Jobs</label></li>
+          <li><label><input type="radio" name="q1" value="0"> Bjarne Stroustrup</label></li>
+          <li><label><input type="radio" name="q1" value="1"> James Gosling</label></li>
+          <li><label><input type="radio" name="q1" value="0"> Dennis Ritchie</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>2. Which of the following is a valid Java variable name?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q2" value="0"> int 2number;</label></li>
+          <li><label><input type="radio" name="q2" value="0"> float rate$;</label></li>
+          <li><label><input type="radio" name="q2" value="1"> int variable_count;</label></li>
+          <li><label><input type="radio" name="q2" value="0"> double .number;</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>3. In Java, which keyword is used to create a new object?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q3" value="1"> new</label></li>
+          <li><label><input type="radio" name="q3" value="0"> malloc</label></li>
+          <li><label><input type="radio" name="q3" value="0"> create</label></li>
+          <li><label><input type="radio" name="q3" value="0"> alloc</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>4. What is the default access modifier for a class in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q4" value="1"> package-private</label></li>
+          <li><label><input type="radio" name="q4" value="0"> public</label></li>
+          <li><label><input type="radio" name="q4" value="0"> private</label></li>
+          <li><label><input type="radio" name="q4" value="0"> protected</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>5. Which operator is used to allocate memory dynamically in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q5" value="0"> malloc</label></li>
+          <li><label><input type="radio" name="q5" value="1"> new</label></li>
+          <li><label><input type="radio" name="q5" value="0"> calloc</label></li>
+          <li><label><input type="radio" name="q5" value="0"> realloc</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>6. What is a constructor in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q6" value="1"> A method that is called when an object is created</label></li>
+          <li><label><input type="radio" name="q6" value="0"> A method that is called when an object is destroyed</label></li>
+          <li><label><input type="radio" name="q6" value="0"> A method that defines the properties of an object</label></li>
+          <li><label><input type="radio" name="q6" value="0"> A method to define the access modifiers</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>7. Which of the following is used to declare a constant variable in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q7" value="1"> final</label></li>
+          <li><label><input type="radio" name="q7" value="0"> const</label></li>
+          <li><label><input type="radio" name="q7" value="0"> static</label></li>
+          <li><label><input type="radio" name="q7" value="0"> constant</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>8. In Java, which keyword is used to refer to the current object?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q8" value="1"> this</label></li>
+          <li><label><input type="radio" name="q8" value="0"> self</label></li>
+          <li><label><input type="radio" name="q8" value="0"> object</label></li>
+          <li><label><input type="radio" name="q8" value="0"> current</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>9. What does the 'void' keyword represent in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q9" value="0"> A function that returns an integer</label></li>
+          <li><label><input type="radio" name="q9" value="0"> A function that has no parameters</label></li>
+          <li><label><input type="radio" name="q9" value="1"> A function that does not return a value</label></li>
+          <li><label><input type="radio" name="q9" value="0"> A function that throws an exception</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>10. What is an array in Java?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q10" value="0"> A type of collection that stores a variable number of elements</label></li>
+          <li><label><input type="radio" name="q10" value="0"> A collection of variables of different types</label></li>
+          <li><label><input type="radio" name="q10" value="1"> A collection of variables of the same type</label></li>
+          <li><label><input type="radio" name="q10" value="0"> A fixed-size list</label></li>
+        </ul>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div class="score" id="scoreContainer"></div>
+    <div id="back-button">
+        <a href="menu.html">Back</a>
+      </div>
+  </div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      for (let i = 1; i <= 10; i++) {
+        const options = document.getElementsByName('q' + i);
+        for (const option of options) {
+          if (option.checked && parseInt(option.value) === 1) {
+            score++;
+          }
+        }
+      }
+      document.getElementById('scoreContainer').textContent = 'Your Score: ' + score + ' / 10';
+    });
+
+    function goBack() {
+      history.back();
+    }
+  </script>
+</body>
+</html>

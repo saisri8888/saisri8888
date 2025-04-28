@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C++ Programming Quiz - Hard Level</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 10px;
+    }
+    .options input {
+      margin-right: 10px;
+    }
+    .submit-btn, .back-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #2575fc;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover, .back-btn:hover {
+      background-color: #0056d2;
+    }
+    .score {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>C++ Programming Quiz</h1>
+    <h2>Hard Level</h2>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What is the output of the following C++ code?</p>
+        <pre>
+          #include<iostream>
+          using namespace std;
+          class A {
+          public:
+            virtual void func() { cout << "A's func"; }
+          };
+          class B : public A {
+          public:
+            void func() { cout << "B's func"; }
+          };
+          int main() {
+            A* a = new B();
+            a->func();
+            return 0;
+          }
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q1" value="0"> A's func</label></li>
+          <li><label><input type="radio" name="q1" value="1"> B's func</label></li>
+          <li><label><input type="radio" name="q1" value="0"> Compilation error</label></li>
+          <li><label><input type="radio" name="q1" value="0"> Runtime error</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>2. Which of the following C++ features is NOT inherited by derived classes?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q2" value="0"> Static members</label></li>
+          <li><label><input type="radio" name="q2" value="1"> Virtual functions</label></li>
+          <li><label><input type="radio" name="q2" value="0"> Constructor</label></li>
+          <li><label><input type="radio" name="q2" value="0"> Destructor</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>3. What will be the output of the following C++ code?</p>
+        <pre>
+          #include<iostream>
+          using namespace std;
+          int main() {
+            int i = 1;
+            while(i <= 5) {
+              cout << i++ << " ";
+            }
+            return 0;
+          }
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q3" value="1"> 1 2 3 4 5</label></li>
+          <li><label><input type="radio" name="q3" value="0"> 1 2 3 4</label></li>
+          <li><label><input type="radio" name="q3" value="0"> 1 2 3</label></li>
+          <li><label><input type="radio" name="q3" value="0"> Infinite loop</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>4. Which of the following is used to implement dynamic polymorphism in C++?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q4" value="1"> Virtual function</label></li>
+          <li><label><input type="radio" name="q4" value="0"> Friend function</label></li>
+          <li><label><input type="radio" name="q4" value="0"> Static function</label></li>
+          <li><label><input type="radio" name="q4" value="0"> Inline function</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>5. In C++, which of the following statements is true about operator overloading?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q5" value="0"> It can be used to overload any operator.</label></li>
+          <li><label><input type="radio" name="q5" value="0"> It can only be used with unary operators.</label></li>
+          <li><label><input type="radio" name="q5" value="1"> Some operators, like =, +, and -, can be overloaded.</label></li>
+          <li><label><input type="radio" name="q5" value="0"> It is not allowed in C++.</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>6. What will be the output of the following C++ code?</p>
+        <pre>
+          #include<iostream>
+          using namespace std;
+          int main() {
+            int x = 5;
+            if(x++ == 5) {
+              cout << "True ";
+            } else {
+              cout << "False ";
+            }
+            cout << x;
+            return 0;
+          }
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q6" value="0"> True 5</label></li>
+          <li><label><input type="radio" name="q6" value="1"> True 6</label></li>
+          <li><label><input type="radio" name="q6" value="0"> False 5</label></li>
+          <li><label><input type="radio" name="q6" value="0"> False 6</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>7. Which of the following is correct about 'this' pointer in C++?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q7" value="1"> 'this' pointer is used to access the calling object's members.</label></li>
+          <li><label><input type="radio" name="q7" value="0"> 'this' pointer can be used to call static members.</label></li>
+          <li><label><input type="radio" name="q7" value="0"> 'this' pointer is not available inside static member functions.</label></li>
+          <li><label><input type="radio" name="q7" value="0"> All of the above are correct.</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>8. What will be the output of the following code in C++?</p>
+        <pre>
+          #include<iostream>
+          using namespace std;
+          int main() {
+            int a = 10, b = 20;
+            int c = (a, b);
+            cout << c;
+            return 0;
+          }
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q8" value="0"> 10</label></li>
+          <li><label><input type="radio" name="q8" value="1"> 20</label></li>
+          <li><label><input type="radio" name="q8" value="0"> Compilation Error</label></li>
+          <li><label><input type="radio" name="q8" value="0"> 30</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>9. In C++, which of the following memory management functions are used to allocate and free dynamic memory?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q9" value="1"> new and delete</label></li>
+          <li><label><input type="radio" name="q9" value="0"> malloc and free</label></li>
+          <li><label><input type="radio" name="q9" value="0"> alloc and dealloc</label></li>
+          <li><label><input type="radio" name="q9" value="0"> calloc and free</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>10. Which of the following is used to prevent the inheritance of a class in C++?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q10" value="1"> final</label></li>
+          <li><label><input type="radio" name="q10" value="0"> private</label></li>
+          <li><label><input type="radio" name="q10" value="0"> static</label></li>
+          <li><label><input type="radio" name="q10" value="0"> protected</label></li>
+        </ul>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div class="score" id="scoreContainer"></div>
+    <div id="back-button">
+        <a href="menu.html">Back</a>
+      </div>
+  </div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      for (let i = 1; i <= 10; i++) {
+        const options = document.getElementsByName('q' + i);
+        for (const option of options) {
+          if (option.checked && parseInt(option.value) === 1) {
+            score++;
+          }
+        }
+      }
+      document.getElementById('scoreContainer').textContent = 'Your Score: ' + score + ' / 10';
+    });
+
+    function goBack() {
+      history.back();
+    }
+  </script>
+</body>
+</html>

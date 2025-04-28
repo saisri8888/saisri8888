@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DBMS Programming Quiz - Medium Level</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 10px;
+    }
+    .options input {
+      margin-right: 10px;
+    }
+    .submit-btn, .back-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #2575fc;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover, .back-btn:hover {
+      background-color: #0056d2;
+    }
+    .score {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>DBMS Programming Quiz</h1>
+    <h2>Medium Level</h2>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What is the main difference between the primary key and a unique key in DBMS?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q1" value="1"> A primary key cannot have NULL values, but a unique key can.</label></li>
+          <li><label><input type="radio" name="q1" value="0"> A primary key can have NULL values, but a unique key cannot.</label></li>
+          <li><label><input type="radio" name="q1" value="0"> Both primary and unique keys can have NULL values.</label></li>
+          <li><label><input type="radio" name="q1" value="0"> Neither primary nor unique keys can have NULL values.</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>2. Which of the following is the correct definition of a "deadlock" in DBMS?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q2" value="0"> A situation where a transaction is suspended indefinitely.</label></li>
+          <li><label><input type="radio" name="q2" value="1"> A situation where two or more transactions are waiting for each other to release resources.</label></li>
+          <li><label><input type="radio" name="q2" value="0"> A situation where a transaction runs without any interruption.</label></li>
+          <li><label><input type="radio" name="q2" value="0"> A situation where a transaction is aborted due to a system crash.</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>3. Which of the following is NOT a part of the ACID properties in DBMS?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q3" value="0"> Atomicity</label></li>
+          <li><label><input type="radio" name="q3" value="0"> Consistency</label></li>
+          <li><label><input type="radio" name="q3" value="0"> Isolation</label></li>
+          <li><label><input type="radio" name="q3" value="1"> Duplication</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>4. Which of the following is a type of JOIN in SQL?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q4" value="0"> INNER JOIN</label></li>
+          <li><label><input type="radio" name="q4" value="0"> OUTER JOIN</label></li>
+          <li><label><input type="radio" name="q4" value="1"> BOTH INNER JOIN and OUTER JOIN</label></li>
+          <li><label><input type="radio" name="q4" value="0"> LEFT JOIN</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>5. What is the purpose of normalization in DBMS?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q5" value="1"> To remove redundancy and improve data integrity</label></li>
+          <li><label><input type="radio" name="q5" value="0"> To store data in a more compact form</label></li>
+          <li><label><input type="radio" name="q5" value="0"> To enhance the retrieval speed of data</label></li>
+          <li><label><input type="radio" name="q5" value="0"> To encrypt sensitive data for security purposes</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>6. Which SQL command is used to add new rows in a table?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q6" value="0"> INSERT</label></li>
+          <li><label><input type="radio" name="q6" value="1"> INSERT INTO</label></li>
+          <li><label><input type="radio" name="q6" value="0"> ADD INTO</label></li>
+          <li><label><input type="radio" name="q6" value="0"> UPDATE INTO</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>7. What is the purpose of the "HAVING" clause in SQL?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q7" value="0"> It specifies the condition for rows before grouping</label></li>
+          <li><label><input type="radio" name="q7" value="1"> It specifies the condition for groups after grouping</label></li>
+          <li><label><input type="radio" name="q7" value="0"> It sorts the result set in ascending order</label></li>
+          <li><label><input type="radio" name="q7" value="0"> It is used to delete rows from the database</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>8. What is the purpose of an "index" in DBMS?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q8" value="0"> To provide security for the data</label></li>
+          <li><label><input type="radio" name="q8" value="1"> To speed up the retrieval of records</label></li>
+          <li><label><input type="radio" name="q8" value="0"> To encrypt the data in the table</label></li>
+          <li><label><input type="radio" name="q8" value="0"> To ensure data integrity</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>9. Which of the following is a feature of a Relational Database Management System (RDBMS)?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q9" value="0"> The data is stored as a flat file</label></li>
+          <li><label><input type="radio" name="q9" value="1"> The data is stored in tables with rows and columns</label></li>
+          <li><label><input type="radio" name="q9" value="0"> The data is stored in a hierarchical structure</label></li>
+          <li><label><input type="radio" name="q9" value="0"> The data is stored in key-value pairs</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>10. In SQL, which statement is used to modify the structure of an existing table?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q10" value="1"> ALTER TABLE</label></li>
+          <li><label><input type="radio" name="q10" value="0"> MODIFY TABLE</label></li>
+          <li><label><input type="radio" name="q10" value="0"> CHANGE TABLE</label></li>
+          <li><label><input type="radio" name="q10" value="0"> UPDATE TABLE</label></li>
+        </ul>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div class="score" id="scoreContainer"></div>
+    <div id="back-button">
+        <a href="menu.html">Back</a>
+      </div>
+  </div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      for (let i = 1; i <= 10; i++) {
+        const options = document.getElementsByName('q' + i);
+        for (const option of options) {
+          if (option.checked && parseInt(option.value) === 1) {
+            score++;
+          }
+        }
+      }
+      document.getElementById('scoreContainer').textContent = 'Your Score: ' + score + ' / 10';
+    });
+
+    function goBack() {
+      history.back();
+    }
+  </script>
+</body>
+</html>

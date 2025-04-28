@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python Programming Quiz - Hard Level</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 10px;
+    }
+    .options input {
+      margin-right: 10px;
+    }
+    .submit-btn, .back-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #2575fc;
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover, .back-btn:hover {
+      background-color: #0056d2;
+    }
+    .score {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Python Programming Quiz</h1>
+    <h2>Hard Level</h2>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What is the output of the following Python code?</p>
+        <pre>
+          def func(x):
+              try:
+                  return 10 / x
+              except ZeroDivisionError:
+                  return "Divide by zero error"
+              finally:
+                  return "Finally block executed"
+          print(func(0))
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q1" value="0"> "Divide by zero error"</label></li>
+          <li><label><input type="radio" name="q1" value="0"> "Finally block executed"</label></li>
+          <li><label><input type="radio" name="q1" value="1"> "Finally block executed"</label></li>
+          <li><label><input type="radio" name="q1" value="0"> "None"</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>2. What will be the output of the following code?</p>
+        <pre>
+          def f(n):
+              return lambda x: x * n
+          g = f(2)
+          print(g(4))
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q2" value="1"> 8</label></li>
+          <li><label><input type="radio" name="q2" value="0"> 6</label></li>
+          <li><label><input type="radio" name="q2" value="0"> 4</label></li>
+          <li><label><input type="radio" name="q2" value="0"> 2</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>3. What is the time complexity of the following code?</p>
+        <pre>
+          def func(arr):
+              result = 0
+              for i in arr:
+                  for j in arr:
+                      result += i + j
+              return result
+          print(func([1, 2, 3]))
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q3" value="1"> O(n^2)</label></li>
+          <li><label><input type="radio" name="q3" value="0"> O(n)</label></li>
+          <li><label><input type="radio" name="q3" value="0"> O(n^3)</label></li>
+          <li><label><input type="radio" name="q3" value="0"> O(log n)</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>4. What is the output of the following code?</p>
+        <pre>
+          a = [1, 2, 3]
+          b = a
+          b[0] = 10
+          print(a)
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q4" value="1"> [10, 2, 3]</label></li>
+          <li><label><input type="radio" name="q4" value="0"> [1, 2, 3]</label></li>
+          <li><label><input type="radio" name="q4" value="0"> [10, 3]</label></li>
+          <li><label><input type="radio" name="q4" value="0"> [10, 2]</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>5. What will be the output of the following code?</p>
+        <pre>
+          def func(*args):
+              return sum(args)
+          print(func(1, 2, 3, 4))
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q5" value="0"> Error</label></li>
+          <li><label><input type="radio" name="q5" value="1"> 10</label></li>
+          <li><label><input type="radio" name="q5" value="0"> 4</label></li>
+          <li><label><input type="radio" name="q5" value="0"> 7</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>6. What is the output of the following code?</p>
+        <pre>
+          a = [1, 2, 3, 4]
+          b = a[1:3]
+          print(b)
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q6" value="1"> [2, 3]</label></li>
+          <li><label><input type="radio" name="q6" value="0"> [1, 2]</label></li>
+          <li><label><input type="radio" name="q6" value="0"> [1, 2, 3]</label></li>
+          <li><label><input type="radio" name="q6" value="0"> [2]</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>7. What is the result of the following code?</p>
+        <pre>
+          def outer():
+              x = 10
+              def inner():
+                  nonlocal x
+                  x = 20
+              inner()
+              return x
+          print(outer())
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q7" value="0"> 10</label></li>
+          <li><label><input type="radio" name="q7" value="1"> 20</label></li>
+          <li><label><input type="radio" name="q7" value="0"> Error</label></li>
+          <li><label><input type="radio" name="q7" value="0"> None</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>8. What does the following Python code do?</p>
+        <pre>
+          s = "python"
+          print(s[::-1])
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q8" value="1"> Reverses the string</label></li>
+          <li><label><input type="radio" name="q8" value="0"> Converts the string to uppercase</label></li>
+          <li><label><input type="radio" name="q8" value="0"> Converts the string to lowercase</label></li>
+          <li><label><input type="radio" name="q8" value="0"> Prints the string as it is</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>9. Which of the following is the correct way to declare a function in Python?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q9" value="1"> def func():</label></li>
+          <li><label><input type="radio" name="q9" value="0"> function func():</label></li>
+          <li><label><input type="radio" name="q9" value="0"> func = function():</label></li>
+          <li><label><input type="radio" name="q9" value="0"> func def():</label></li>
+        </ul>
+      </div>
+      <div class="question">
+        <p>10. What will be the output of the following code?</p>
+        <pre>
+          x = [1, 2, 3]
+          y = x
+          y[0] = 4
+          print(x)
+        </pre>
+        <ul class="options">
+          <li><label><input type="radio" name="q10" value="1"> [4, 2, 3]</label></li>
+          <li><label><input type="radio" name="q10" value="0"> [1, 2, 3]</label></li>
+          <li><label><input type="radio" name="q10" value="0"> [4, 3]</label></li>
+          <li><label><input type="radio" name="q10" value="0"> [1, 3]</label></li>
+        </ul>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div class="score" id="scoreContainer"></div>
+    <div id="back-button">
+        <a href="menu.html">Back</a>
+      </div>
+  </div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      for (let i = 1; i <= 10; i++) {
+        const options = document.getElementsByName('q' + i);
+        for (const option of options) {
+          if (option.checked && parseInt(option.value) === 1) {
+            score++;
+          }
+        }
+      }
+      document.getElementById('scoreContainer').textContent = 'Your Score: ' + score + ' / 10';
+    });
+
+    function goBack() {
+      history.back();
+    }
+  </script>
+</body>
+</html>
